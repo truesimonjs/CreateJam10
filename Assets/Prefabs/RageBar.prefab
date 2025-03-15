@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 132040206193042616}
   - component: {fileID: 4594438448666871165}
+  - component: {fileID: 2164827233286283644}
   m_Layer: 5
   m_Name: RageBar
   m_TagString: Untagged
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -164,6 +165,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2164827233286283644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691295987896947370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cde99f4a417e540b06e5a2ad087886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8083962615668807920
 GameObject:
   m_ObjectHideFlags: 0
