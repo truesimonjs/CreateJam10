@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba54a959271db5a4c94784afd12815af
+guid: 829a0a7a587b6884cb6fdc676ef64b14
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,8 +71,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 2
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight-John_0
+      name: RatBoy-Walking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 291f026b1aaf6e24bb140d3e374d41c6
-      internalID: 435966359
+      spriteID: 859f73f079ebf8047b0e6b6eb5700dd5
+      internalID: 894702431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight-John_1
+      name: RatBoy-Walking_1
       rect:
         serializedVersion: 2
         x: 32
@@ -160,8 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9abd290cae2e8004a911c93c15046eb0
-      internalID: -855870460
+      spriteID: bf2a595dd4086e541b2bee6e5b328fb4
+      internalID: 1661990922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatBoy-Walking_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f619bb3759d9ce4090395bf7aceb1c6
+      internalID: 1127388786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RatBoy-Walking_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ec574605b6f204f82845b61c078f27
+      internalID: 845659276
       vertices: []
       indices: 
       edges: []
@@ -170,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d43d1a12ff2b4644793da2cd469c72d8
+    spriteID: 8a56cef49a334c74ca5c88d6714b1fd0
     internalID: 0
     vertices: []
     indices: 
@@ -180,8 +224,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Knight-John_0: 435966359
-      Knight-John_1: -855870460
+      RatBoy-Walking_0: 894702431
+      RatBoy-Walking_1: 1661990922
+      RatBoy-Walking_2: 1127388786
+      RatBoy-Walking_3: 845659276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

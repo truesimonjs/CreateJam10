@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5eff33ee39179b44d8aeb83f3201c0c8
+guid: ba54a959271db5a4c94784afd12815af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,8 +71,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight-John-attack(bad)_0
+      name: Knight-John_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f2bd04448d566b439bc7101c56d4b9f
-      internalID: 1893218696
+      spriteID: 291f026b1aaf6e24bb140d3e374d41c6
+      internalID: 435966359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight-John-attack(bad)_1
+      name: Knight-John_1
       rect:
         serializedVersion: 2
         x: 32
@@ -160,96 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71023f2388d6a0c458408378a7b464ec
-      internalID: -694427744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight-John-attack(bad)_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bad31b8ee37e2c242b583b235f7f0065
-      internalID: 2102431574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight-John-attack(bad)_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1eae8a29311f52e46a6bf0ee2a018f5a
-      internalID: -846051870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight-John-attack(bad)_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a96f7826cdd9f7b4998b30908b3dc126
-      internalID: -1038583461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Knight-John-attack(bad)_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c2d4e70c63960d4297f6f6eb86d6773
-      internalID: 1915255077
+      spriteID: 9abd290cae2e8004a911c93c15046eb0
+      internalID: -855870460
       vertices: []
       indices: 
       edges: []
@@ -258,7 +170,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fbd338ff59f3f0e458153911fc52314e
+    spriteID: d43d1a12ff2b4644793da2cd469c72d8
     internalID: 0
     vertices: []
     indices: 
@@ -268,12 +180,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Knight-John-attack(bad)_0: 1893218696
-      Knight-John-attack(bad)_1: -694427744
-      Knight-John-attack(bad)_2: 2102431574
-      Knight-John-attack(bad)_3: -846051870
-      Knight-John-attack(bad)_4: -1038583461
-      Knight-John-attack(bad)_5: 1915255077
+      Knight-John_0: 435966359
+      Knight-John_1: -855870460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
