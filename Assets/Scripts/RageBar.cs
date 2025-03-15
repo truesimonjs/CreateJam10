@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class RageBar : MonoBehaviour
 {
+
+    public static RageBar instance;
+    
     [SerializeField] private Slider slider;
 
     private void Awake()
