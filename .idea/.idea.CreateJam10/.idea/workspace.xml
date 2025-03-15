@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="688c30f5-ecc6-4094-9df8-34b3e36a0530" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CreateJam10/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CreateJam10/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MJ_PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MJ_PlayerController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="688c30f5-ecc6-4094-9df8-34b3e36a0530" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742030021897</updated>
       <workItem from="1742030024138" duration="737000" />
-      <workItem from="1742033527912" duration="19537000" />
+      <workItem from="1742033527912" duration="20110000" />
     </task>
     <servers />
   </component>
