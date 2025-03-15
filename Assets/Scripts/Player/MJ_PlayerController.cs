@@ -11,11 +11,6 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private bool leashing, canLeash;
     private GameObject john;
 
-    [SerializeField] private float speed, leashSpeed, leashAbilityTime, timeSinceLeash, hp, leashDelayTime;
-    private Rigidbody2D rb;
-    [SerializeField] bool leashing, canLeash;
-
-
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,29 +56,24 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
             StartCoroutine(Leash());
             canLeash = false;
         }
-
-
+        
         if (leashing)
         {
-            if(Vector2.Distance(transform.position,john.transform.position) < leashDistance)
+            if (Vector2.Distance(transform.position, john.transform.position) < leashDistance)
             {
                 hp = baseHP;
             }
-
-
+        }
     }
 
+    //Leash
     private IEnumerator Leash()
     {
         canLeash = false;
         leashing = true;
         speed = leashSpeed;
         yield return new WaitForSeconds(leashAbilityTime);
-
         RageBar.instance.AddToRageSlider(40);
-
-        RageBar.addToRageSlider(40);
-
         leashing = false;
         speed = 5;
         yield return new WaitForSeconds(leashDelayTime);
