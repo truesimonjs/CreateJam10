@@ -55,7 +55,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         leashing = true;
         speed = leashSpeed;
         yield return new WaitForSeconds(leashAbilityTime);
-        RageBar.addToRageSlider(40);
+        //RageBar.addToRageSlider(40);
         leashing = false;
         speed = 5;
         yield return new WaitForSeconds(leashDelayTime);

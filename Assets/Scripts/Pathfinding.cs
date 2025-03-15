@@ -6,8 +6,8 @@ public class Pathfinding : MonoBehaviour
 {
     public Tilemap tilemap;
     public Vector3Int position;
-    public Vector3Int target;
 
+    public Transform target;
     private void Start()
     {
        Debug.Log( tilemap.GetTile(Vector3Int.zero));
@@ -18,27 +18,32 @@ public class Pathfinding : MonoBehaviour
     
     private void Update()
     {
-        transform.position = tilemap.CellToWorld(position);
-        Debug.Log(tilemap.WorldToCell(transform.position));
+        
     }
     private IEnumerator walk()
     {
         while (true)
         {
-            yield return MoveToTile(target);
+            yield return MoveToTile(tilemap.WorldToCell(target.position));
         }
+        
+            
+        
     }
     private IEnumerator MoveToTile(Vector3Int tilePos)
     {
-        const float moveTime = 1;
+        const float moveTime = 5;
         float startTime = Time.time;
         Vector3 origin = transform.position;
         Vector3 destination = tilemap.CellToWorld(tilePos);
         while (Time.time < startTime + moveTime)
         {
-            transform.position = Vector3.Lerp(origin, destination, (startTime+moveTime)-Time.time);
+            transform.position = Vector3.Lerp(origin, destination, Mathf.InverseLerp(startTime,startTime+moveTime,Time.time));
             
             yield return new WaitForSeconds(0);
+
         }
+        transform.position = destination;
     }
+    
 }
