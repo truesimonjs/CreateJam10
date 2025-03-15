@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+
   leashSpeed: 15
   leashAbilityTime: 5
   timeSinceLeash: 0
@@ -159,6 +160,8 @@ MonoBehaviour:
   leashDelayTime: 8
   leashing: 0
   canLeash: 0
+
+
 --- !u!212 &235690628
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,19 +5,30 @@ using UnityEngine;
 public class MJ_PlayerController : MonoBehaviour, IDamageable
 {
     [Header("player properties")]
+
     [SerializeField] private float speed,baseHP, leashSpeed, leashAbilityTime, timeSinceLeash, hp, leashDelayTime, leashDistance;
     private Rigidbody2D rb;
     [SerializeField] private bool leashing, canLeash;
     private GameObject john;
 
+    [SerializeField] private float speed, leashSpeed, leashAbilityTime, timeSinceLeash, hp, leashDelayTime;
+    private Rigidbody2D rb;
+    [SerializeField] bool leashing, canLeash;
+
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         baseHP = hp;
         canLeash = true;
         rb = GetComponent<Rigidbody2D>();
         john = GameObject.Find("John");
+
+        canLeash = true;
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     public void DamageDeduction(float damage)
@@ -51,13 +62,15 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
             canLeash = false;
         }
 
+
         if (leashing)
         {
             if(Vector2.Distance(transform.position,john.transform.position) < leashDistance)
             {
                 hp = baseHP;
             }
-        }
+
+
     }
 
     private IEnumerator Leash()
@@ -66,7 +79,11 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         leashing = true;
         speed = leashSpeed;
         yield return new WaitForSeconds(leashAbilityTime);
+
         RageBar.instance.AddToRageSlider(40);
+
+        RageBar.addToRageSlider(40);
+
         leashing = false;
         speed = 5;
         yield return new WaitForSeconds(leashDelayTime);
