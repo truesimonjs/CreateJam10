@@ -11,6 +11,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
 {
     [Header("player properties")]
     [SerializeField] private float speed,baseHP, leashSpeed,healthPotionCooldown, leashAbilityTime, timeSinceLeash, hp, leashCooldown, leashDistance, rubberbandCooldown, canCauseCrashCooldown;
+    [SerializeField] private int rubberRage, potionRage, crashRage, leashRage;
     private Rigidbody2D rb;
     [SerializeField] private bool leashing, canLeash, canRubberband, canHealthPotion, canCauseCrash, johnPosFreeze;
     private GameObject john;
@@ -117,11 +118,13 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
             transform.localScale = localScale;
         }
     }
+    
     IEnumerator DrinkHealthPotion()
     {
         animator.SetTrigger("Potion");
         hp += baseHP * 0.7f;
         health.HealPlayer(baseHP*0.7f);
+        RageBar.instance.AddToRageSlider(potionRage);
         yield return new WaitForSeconds(healthPotionCooldown);
     }
 
@@ -136,6 +139,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         lockJohnPos.position = john.transform.position;
         yield return new WaitForSeconds(Random.Range(Random.Range(Random.Range(1,30),Random.Range(1,40)),Random.Range(Random.Range(1,20),Random.Range(1,40*2))));
         johnPosFreeze = true;
+        RageBar.instance.AddToRageSlider(crashRage);
         yield return new WaitForSeconds(canCauseCrashCooldown);
         canCauseCrash = true;
         johnPosFreeze = false;
@@ -166,7 +170,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         tmp.position = john.transform.position;
         john.transform.position = prePos.position;
         
-        
+        RageBar.instance.AddToRageSlider(rubberRage);
         yield return new WaitForSeconds(rubberbandCooldown);
         canRubberband = true;
         Debug.Log("Rubberbanding cooldown has completed!");
@@ -179,7 +183,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         leashing = true;
         speed = leashSpeed;
         yield return new WaitForSeconds(leashAbilityTime);
-        RageBar.instance.AddToRageSlider(40);
+        RageBar.instance.AddToRageSlider(leashRage);
         leashing = false;
         speed = 5;
         yield return new WaitForSeconds(leashCooldown);
