@@ -24,6 +24,12 @@ public class UIController : MonoBehaviour
     }
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene("TitleScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main");
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("navigationTestScene");
     }
 }

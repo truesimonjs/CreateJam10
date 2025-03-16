@@ -38,4 +38,8 @@ public class PlayerHealth : MonoBehaviour
         healthSliderObj.SetActive(true);
         healthSlider.value -= value;
     }
+    public void SetHealth(float value)
+    {
+        healthSlider.value = value;
+    }
 }
