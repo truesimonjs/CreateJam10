@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,5 +25,20 @@ public class RageBar : MonoBehaviour
     public void AddToRageSlider(int value)
     {
         slider.value += value;
+    }
+
+    void Update()
+    {
+        if (slider.value >= 100)
+        {
+            StartCoroutine(AppQuit());
+        }
+    }
+
+    IEnumerator AppQuit()
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(5);
+        Application.Quit();
     }
 }
