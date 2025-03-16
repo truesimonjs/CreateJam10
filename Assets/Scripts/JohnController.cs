@@ -13,6 +13,7 @@ public class JohnController : MonoBehaviour
     public NavMeshAgent agent;
     [SerializeField]private Animator animator;
     bool isFacingRight = true;
+    public RageBar ragebar;
     
     private void Start()
     {
@@ -53,8 +54,9 @@ public class JohnController : MonoBehaviour
     private IEnumerator Attacking()
     {
         attacking = true;
-        yield return new WaitForSeconds(attackCooldown);
         player.GetComponent<IDamageable>().DamageDeduction(damage);
+        ragebar.SubtractFromRageSlider(5);
+        yield return new WaitForSeconds(attackCooldown);
         attacking = false;
     }
 }

@@ -255,6 +255,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71450529}
   m_CullTransparentMesh: 1
+--- !u!114 &176487598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3027425534243923381, guid: 05f680f3c2e2a2446a336610a0bfa68c, type: 3}
+  m_PrefabInstance: {fileID: 1024082998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cde99f4a417e540b06e5a2ad087886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &487313392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,24 +4222,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3060723b9923f6c4183fe6def8f406ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 7
   baseHP: 0
-  leashSpeed: 0
-  healthPotionCooldown: 0
-  leashAbilityTime: 0
+  leashSpeed: 15
+  healthPotionCooldown: 38
+  leashAbilityTime: 3
   timeSinceLeash: 0
   hp: 100
-  leashCooldown: 0
-  leashDistance: 0
-  rubberbandCooldown: 0
-  canCauseCrashCooldown: 0
+  leashCooldown: 15
+  leashDistance: 15
+  rubberbandCooldown: 28
+  canCauseCrashCooldown: 27
+  rubberRage: 30
+  potionRage: 30
+  crashRage: 30
+  leashRage: 30
   leashing: 0
   canLeash: 0
   canRubberband: 0
   canHealthPotion: 0
   canCauseCrash: 0
   johnPosFreeze: 0
+  lockJohnPos: {fileID: 0}
   animator: {fileID: 1031503087}
+  ragebar: {fileID: 176487598}
 --- !u!212 &1031503085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4445,6 +4462,7 @@ MonoBehaviour:
   target: {fileID: 1031503086}
   agent: {fileID: 1039832167}
   animator: {fileID: 1039832168}
+  ragebar: {fileID: 176487598}
 --- !u!195 &1039832167
 NavMeshAgent:
   m_ObjectHideFlags: 0

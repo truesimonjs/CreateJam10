@@ -15,12 +15,13 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     [SerializeField] private bool leashing, canLeash, canRubberband, canHealthPotion, canCauseCrash, johnPosFreeze;
     private GameObject john;
-    private Transform lockJohnPos;
+    public Transform lockJohnPos;
     Vector2 inputDir;
     bool IsFacingRigt = true;
     [SerializeField] private Animator animator;
     PlayerHealth health;
     UIController UI;
+    public RageBar ragebar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,10 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<PlayerHealth>();
         UI = GameObject.Find("Canvas").GetComponent<UIController>();
+
+        canCauseCrash = true;
+        canHealthPotion = true;
+        canRubberband = true;
     }
 
     public void DamageDeduction(float damage)
@@ -83,6 +88,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
             if (Vector2.Distance(transform.position, john.transform.position) < leashDistance)
             {
                 hp = baseHP;
+                health.SetHealth(hp);
             }
         }
 
@@ -127,7 +133,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         animator.SetTrigger("Potion");
         hp += baseHP * 0.7f;
         health.HealPlayer(baseHP*0.7f);
-        RageBar.instance.AddToRageSlider(potionRage);
+        ragebar.AddToRageSlider(potionRage);
         yield return new WaitForSeconds(healthPotionCooldown);
     }
 
@@ -142,7 +148,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         lockJohnPos.position = john.transform.position;
         yield return new WaitForSeconds(Random.Range(Random.Range(Random.Range(1,30),Random.Range(1,40)),Random.Range(Random.Range(1,20),Random.Range(1,40*2))));
         johnPosFreeze = true;
-        RageBar.instance.AddToRageSlider(crashRage);
+        ragebar.AddToRageSlider(crashRage);
         yield return new WaitForSeconds(canCauseCrashCooldown);
         canCauseCrash = true;
         johnPosFreeze = false;
@@ -173,7 +179,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         tmp.position = john.transform.position;
         john.transform.position = prePos.position;
         
-        RageBar.instance.AddToRageSlider(rubberRage);
+        ragebar.AddToRageSlider(rubberRage);
         yield return new WaitForSeconds(rubberbandCooldown);
         canRubberband = true;
         Debug.Log("Rubberbanding cooldown has completed!");
@@ -186,7 +192,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         leashing = true;
         speed = leashSpeed;
         yield return new WaitForSeconds(leashAbilityTime);
-        RageBar.instance.AddToRageSlider(leashRage);
+        ragebar.AddToRageSlider(leashRage);
         leashing = false;
         speed = 5;
         yield return new WaitForSeconds(leashCooldown);
