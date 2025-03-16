@@ -3679,8 +3679,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340c2d9dfe547394aa98714a03d61a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 1
+  damage: 20
+  attackDistance: 1
   target: {fileID: 1031503086}
   agent: {fileID: 1039832167}
+  animator: {fileID: 1039832168}
 --- !u!195 &1039832167
 NavMeshAgent:
   m_ObjectHideFlags: 0

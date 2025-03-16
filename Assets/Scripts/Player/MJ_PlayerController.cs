@@ -18,6 +18,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     Vector2 inputDir;
     bool IsFacingRigt = true;
     [SerializeField] private Animator animator;
+    PlayerHealth health;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,12 +30,13 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
 
         canLeash = true;
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<PlayerHealth>();
     }
 
     public void DamageDeduction(float damage)
     {
         hp -= damage;
-        PlayerHealth.Instance.DamagePlayer(damage);
+        health.DamagePlayer(damage);
         Debug.Log("SOMETHING HIT YOU.. RUN!");
 
         if (hp <= 0)
@@ -119,7 +121,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     {
         animator.SetTrigger("Potion");
         hp += baseHP * 0.7f;
-        PlayerHealth.Instance.HealPlayer(baseHP*0.7f);
+        health.HealPlayer(baseHP*0.7f);
         yield return new WaitForSeconds(healthPotionCooldown);
     }
 
