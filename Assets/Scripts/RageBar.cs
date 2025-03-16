@@ -7,7 +7,7 @@ public class RageBar : MonoBehaviour
 {
 
     public static RageBar instance;
-    
+    UIController UI;
     [SerializeField] private Slider slider;
 
     private void Awake()
@@ -15,7 +15,8 @@ public class RageBar : MonoBehaviour
         slider = GetComponent<Slider>();
         slider.maxValue = 100;
         slider.minValue = 0;
-        slider.value = 100;
+        slider.value = 0;
+        UI = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     public void SubtractFromRageSlider(int value)
@@ -37,6 +38,7 @@ public class RageBar : MonoBehaviour
 
     IEnumerator AppQuit()
     {
+        UI.OpenVictoryScreen();
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(5);
         Application.Quit();
