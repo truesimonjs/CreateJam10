@@ -19,6 +19,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     bool IsFacingRigt = true;
     [SerializeField] private Animator animator;
     PlayerHealth health;
+    UIController UI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +32,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         canLeash = true;
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<PlayerHealth>();
+        UI = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     public void DamageDeduction(float damage)
@@ -43,6 +45,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         {
             Time.timeScale = 0;
             Debug.Log("You Died");
+            UI.OpenDeathScreen();
         }
     }
 
