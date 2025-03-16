@@ -28,12 +28,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void HealPlayer(int value)
+    public void HealPlayer(float value)
     {
         healthSliderObj.SetActive(true);
         healthSlider.value += value;
     }
-    public void DamagePlayer(int value)
+    public void DamagePlayer(float value)
     {
         healthSliderObj.SetActive(true);
         healthSlider.value -= value;
