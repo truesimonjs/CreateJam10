@@ -15,7 +15,10 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private bool leashing, canLeash, canRubberband, canHealthPotion, canCauseCrash, johnPosFreeze;
     private GameObject john;
     private Transform lockJohnPos;
-    
+    Vector2 inputDir;
+    bool IsFacingRigt = true;
+    [SerializeField] private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +34,7 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
     public void DamageDeduction(float damage)
     {
         hp -= damage;
+        PlayerHealth.Instance.DamagePlayer(damage);
         Debug.Log("SOMETHING HIT YOU.. RUN!");
 
         if (hp <= 0)
@@ -48,10 +52,19 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
         float horizontal = Input.GetAxis("Horizontal");
         
         //apply move
-        Vector2 inputDir = new Vector3(horizontal, vertical);
+        inputDir = new Vector3(horizontal, vertical);
         inputDir.Normalize();
         rb.linearVelocity = inputDir * speed;
         
+        if(inputDir.magnitude == 0)
+        {
+            animator.SetBool("IsWalking", false);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", true);
+        }
+
         //Activate Leash
         if (Input.GetKeyDown(KeyCode.Alpha1) && canLeash)
         {
@@ -89,11 +102,24 @@ public class MJ_PlayerController : MonoBehaviour, IDamageable
             canHealthPotion = false;
             StartCoroutine(DrinkHealthPotion());
         }
-    }
 
+        Flip();
+    }
+    private void Flip()
+    {
+        if (inputDir.x < 0f && IsFacingRigt || inputDir.x > 0f && !IsFacingRigt)
+        {
+            IsFacingRigt = !IsFacingRigt;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
     IEnumerator DrinkHealthPotion()
     {
+        animator.SetTrigger("Potion");
         hp += baseHP * 0.7f;
+        PlayerHealth.Instance.HealPlayer(baseHP*0.7f);
         yield return new WaitForSeconds(healthPotionCooldown);
     }
 
